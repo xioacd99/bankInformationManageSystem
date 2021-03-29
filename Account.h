@@ -5,6 +5,8 @@
 
 #endif  // !ACCOUNT
 
+const int NAME_SIZE = 15;
+
 class Account {
 public:
     void createANewAccount();
@@ -19,7 +21,7 @@ public:
 
 private:
     int acno;
-    std::string name;
+    char name[NAME_SIZE];
     int deposit;
     char type;
 };

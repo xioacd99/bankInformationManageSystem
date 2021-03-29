@@ -7,8 +7,7 @@ void mainmenu();
 void turnToOperation(char choice);
 void addRecordToDB();
 void saveOrDrawMoney(int acno, bool choice);
-// true for save money and false for draw
-void outputOneUserInformation(int acno);
+void outputOneUserInformation(int acno);  // true for save money&false for draw
 void outputDBInformation();
 void deleteAccount(int acno);
 void modifyAccount(int acno);

@@ -17,8 +17,7 @@ void welcome();
 void mainmenu();
 void turnToOperation(char choice);
 void addRecordToDB();
-void saveOrDrawMoney(int acno, bool choice);
-// true for save money and false for draw
+void saveOrDrawMoney(int acno,bool choice);  // true for save money&false for draw
 void outputOneUserInformation(int acno);
 void outputDBInformation();
 void deleteAccount(int acno);
@@ -98,7 +97,7 @@ void addRecordToDB() {
     outFile.close();
 }
 
-// true for save money and false for draw
+// true for save money&false for draw
 void saveOrDrawMoney(int acno, bool choice) {
     int amount = 0;
     bool found = false;
@@ -145,6 +144,7 @@ void saveOrDrawMoney(int acno, bool choice) {
     }
 }
 
+// user
 void outputOneUserInformation(int acno) {
     Account ac;
     bool found = false;
@@ -169,6 +169,7 @@ void outputOneUserInformation(int acno) {
     }
 }
 
+// administrator
 void outputDBInformation() {
     Account ac;
     std::ifstream inFile;
@@ -258,6 +259,7 @@ void Account::createANewAccount() {
     std::cout << "\n\n\nAccount Created..";
 }
 
+// check information(user)
 void Account::showInformationNonFormat() const {
     std::cout << "\nAccount no. : " << acno;
     std::cout << "\nAccount holder name: ";
@@ -266,6 +268,7 @@ void Account::showInformationNonFormat() const {
     std::cout << "\nBalance amount : " << deposit;
 }
 
+// check information(administrator)
 void Account::showInformationFormat() const {
     std::cout << acno << std::setw(10) << " " << name << std::setw(10) << " "
               << type << std::setw(6) << " " << deposit << std::endl;

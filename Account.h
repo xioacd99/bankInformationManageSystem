@@ -1,7 +1,6 @@
 #ifndef ACCOUNT
 
 #define ACCOUNT
-#include <string>
 
 #endif  // !ACCOUNT
 

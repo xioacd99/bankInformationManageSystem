@@ -232,38 +232,52 @@ void modifyAccount(int acno) {
 
 // ! member function
 
-void Account:: createANewAccount(){
-
+void Account::createANewAccount() {
+    std::cout << "\nEnter the account No. : ";
+    std::cin >> acno;
+    std::cout << "\n\nEnter the name of the account holder: ";
+    std::cin.ignore();
+    std::cin.getline(name, NAME_SIZE);
+    std::cout << "\nEnter type of the account (C/S): ";
+    std::cin >> type;
+    type = toupper(type);
+    std::cout << "\nEnter the initial amount (>=500 for saving and >=1000 for "
+                 "current) : ";
+    std::cin >> deposit;
+    std::cout << "\n\n\nAccount Created..";
 }
 
-void Account::showInformationNonFormat() const{
-
+void Account::showInformationNonFormat() const {
+    std::cout << "\nAccount no. : " << acno;
+    std::cout << "\nAccount holder name: ";
+    std::cout << name;
+    std::cout << "\nType of account : " << type;
+    std::cout << "\nBalance amount : " << deposit;
 }
 
-void Account::showInformationFormat() const{
-
+void Account::showInformationFormat() const {
+    std::cout << acno << std::setw(10) << " " << name << std::setw(10) << " "
+              << type << std::setw(6) << " " << deposit << std::endl;
 }
 
-void Account::modifyAccount(){
-
+void Account::modifyAccount() {
+    std::cout << "\nAccount no. : " << acno;
+    std::cout << "\nModify account holder name: ";
+    std::cin.ignore();
+    std::cin.getline(name, 15);
+    std::cout << "\nModify type of account: ";
+    std::cin >> type;
+    type = toupper(type);
+    std::cout << "\nModify balance amount: ";
+    std::cin >> deposit;
 }
 
-void Account::saveMoney(int amount){
+void Account::saveMoney(int amount) { deposit += amount; }
 
-}
+void Account::drawMoney(int amount) { deposit -= amount; }
 
-void Account::drawMoney(int amount){
+int Account::getAcno() const { return acno; }
 
-}
+int Account::getDeposit() const { return deposit; }
 
-int Account::getAcno() const{
-
-}
-
-int Account::getDeposit() const{
-
-}
-
-char Account::getType() const{
-
-}
+char Account::getType() const { return type; }

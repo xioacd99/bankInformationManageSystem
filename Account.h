@@ -4,8 +4,6 @@
 
 #endif  // !ACCOUNT
 
-const int NAME_SIZE = 15;
-
 class Account {
 public:
     void createANewAccount();
@@ -19,8 +17,13 @@ public:
     char getType() const;
 
 private:
+    static const int NAME_SIZE = 15;
+
+private:
     int acno;
     char name[NAME_SIZE];
     int deposit;
     char type;
 };
+
+const int Account::NAME_SIZE;

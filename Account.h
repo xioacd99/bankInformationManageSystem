@@ -6,6 +6,10 @@
 
 class Account {
 public:
+    Account() : acno(0), name(), deposit(0), type('\0') {}
+    ~Account() {}
+
+public:
     void createANewAccount();
     void showInformationNonFormat() const;  // check information(user)
     void showInformationFormat() const;     // check information(administrator)
@@ -15,6 +19,10 @@ public:
     int getAcno() const;
     int getDeposit() const;
     char getType() const;
+
+private:
+    Account(const Account&);
+    Account& operator=(const Account&);
 
 private:
     static const int NAME_SIZE = 15;
